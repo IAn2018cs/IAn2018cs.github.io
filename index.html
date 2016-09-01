@@ -35,7 +35,7 @@
 
 
 
-    <link rel="shortcut icon" href="/img/ian.png">
+    <link rel="shortcut icon" href="/img/ian2.png">
 
 
 
@@ -76,7 +76,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: undefined
+        search: true
     }
 </script>
 
@@ -110,6 +110,13 @@
         <p class="header-subtitle">从HelloWorld到世界和平</p>
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -261,6 +268,131 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-建站心得" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/01/建站心得/" class="article-date">
+      <time datetime="2016-09-01T10:56:12.039Z" itemprop="datePublished">2016-09-01</time>
+</a>
+
+ 
+    <a href="/2016/09/01/建站心得/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2016/09/01/建站心得/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/01/建站心得/">探索：使用Hexo搭建博客(Windows用户)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我是在一个安卓开发群里了解到这种搭建博客的方法，群友发了两个链接，链接上的教程说是五分钟搭建自己的博客，可经过了一个多小时的探索才完成了这个博客。自己又搜索些资料，改了改主题，才最终弄成现在这个样子。</p>
+<p>先贴出群友发的两个链接：</p>
+<blockquote>
+<p><a href="http://www.jianshu.com/p/4eaddcbe4d12" title="五分钟搭建博客的链接" target="_blank" rel="external">http://www.jianshu.com/p/4eaddcbe4d12</a></p>
+<p><a href="http://opiece.me/2015/04/09/hexo-guide/" title="使用Hexo搭建个人博客(基于hexo3.0)" target="_blank" rel="external">http://opiece.me/2015/04/09/hexo-guide/</a></p>
+</blockquote>
+<hr>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="搭建前的准备"><a href="#搭建前的准备" class="headerlink" title="搭建前的准备"></a>搭建前的准备</h1><ul>
+<li><p>要有一个github账号 ( 没有的可以先去注册一下 → <a href="https://github.com/" target="_blank" rel="external">github</a> )</p>
+</li>
+<li><p>安装<a href="https://git-scm.com/" target="_blank" rel="external">Git</a> (  下载完后一直下一步就可以，记下安装目录，方便后面使用 )</p>
+</li>
+<li><p>安装<a href="https://nodejs.org/en/" target="_blank" rel="external">Nodejs</a> (下载完后也是一直下一步即可)</p>
+</li>
+<li><p>安装hexo</p>
+<p>  这里就需要Git的安装目录了，在这个目录下找到一个叫Git Bash.vbs的文件，打开如下</p>
+<p>  <img src="https://github.com/IAn2018cs/IAn2018cs.github.io/blob/master/img/git.png" alt=""></p>
+<p>  然后输入 <code>npm install hexo-cli -g</code> 按回车执行，完成</p>
+</li>
+</ul>
+<h1 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h1><h2 id="在github上创建仓库"><a href="#在github上创建仓库" class="headerlink" title="在github上创建仓库"></a>在github上创建仓库</h2><p>进入github首页，在上面的标题栏上点一个加号形状的按钮，弹出三个选项，选第一个New repository</p>
+<p><img src="http://ddd" alt=""></p>
+<p>然后出现下面这个界面</p>
+<p><img src="http://sdsd" alt=""></p>
+<p>仓库名格式必须是 <code>xxx.github.io</code> ，这就是将来你访问你博客的域名，其中的xxx自己随便起。</p>
+<p>其他保持默认即可，然后点击创建，完成此步骤。</p>
+<h2 id="用Hexo初始化博客"><a href="#用Hexo初始化博客" class="headerlink" title="用Hexo初始化博客"></a>用Hexo初始化博客</h2><p>还是找到Git的安装目录，在这个目录下找到 <code>Git Bash.vbs</code> 文件，打开</p>
+<p>输入<code>hexo init xxx.github.io</code></p>
+<p>执行成功后，会在Git的安装目录下创建出一个名为 <code>xxx.github.io</code> 的文件夹。</p>
+<h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h2><p>找到刚刚创建的 <code>xxx.github.io</code> 的文件夹，打开名字叫 <code>_config.yml</code> 的文件，找到以下几个关键字，对照着进行修改</p>
+<pre><code>title:    xxx        //这里写你博客的名字
+subtitle: xxx     //个性签名
+description: xxx    //博客描述     
+author: xxx    //你的名字(昵称)
+language: zh-Hans        //语言 简体中文
+
+theme: next       //主题的名称，后面我们会去配置
+
+deploy:
+    type: git    //使用Git 发布
+    repo: https://github.com/你github的用户名/xxx.github.io.git    // 刚创建的Github仓库(可以到github上复制刚创建仓库的链接)
+</code></pre><p><a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">查看Hexo更多详细配置信息</a></p>
+<h2 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h2><p>其实Hexo提供好的高逼格的主题，可以自己在<a href="https://hexo.io/themes/" target="_blank" rel="external">这里</a>挑选一个喜欢的</p>
+<p><img src="http://sds" alt=""></p>
+<p>下载完后解压，把文件夹名字改成你下载主题的名字 ( 全是小写字母 ) 例：again，然后复制到刚创建的文件夹 <code>xxx.github.io/themes</code> 目录下</p>
+<p>首先到 <code>xxx.github.io</code> 文件夹下的 <code>_config.yml</code> 文件，现在可以设置上一步基础配置里的主题了</p>
+<p>找到 theme 节点修改</p>
+<pre><code>theme: again    //主题的名字，就是我们拷贝到 xxx.github.io/themes  目录下那个文件夹的名字
+</code></pre><p>接下来就是个性化主题了</p>
+<p>来到 <code>xxx.github.io/themes/你主题的名字</code> 文件夹下 打开 <code>_config.yml</code> 修改相应节点。</p>
+<p>一般主题的配置，在下载下的主题文件夹中会有一个叫 <code>README.md</code> 的文件，这里会有相应配置信息。</p>
+<h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><p>所有基础框架都已经创建完成，接下来可以开始写你的第一篇文章了</p>
+<p>在 <code>xxx.github.io/source/_posts</code> 文件夹下</p>
+<p>新建一个名为 <code>xxx.md</code> 的文件，用 <a href="http://www.markdowntutorial.com/" target="_blank" rel="external">Markdown</a> 书写你的大作吧。</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>继续打开 Git 安装目录下的 <code>Git Bash.vbs</code> 文件，输入</p>
+<pre><code>cd xxx.github.io 
+
+hexo s
+</code></pre><p>等待一会，出现以下内容</p>
+<p><img src="http://sds" alt=""></p>
+<p>就可以在浏览器中输入 <code>https://localhost:4000</code> 访问了 ( 其中 localhost 可以替换成本机 IP )。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
