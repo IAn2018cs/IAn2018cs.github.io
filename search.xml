@@ -27,9 +27,9 @@
 </li>
 </ul>
 <h1 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h1><h2 id="在github上创建仓库"><a href="#在github上创建仓库" class="headerlink" title="在github上创建仓库"></a>在github上创建仓库</h2><p>进入github首页，在上面的标题栏上点一个加号形状的按钮，弹出三个选项，选第一个New repository</p>
-<p><img src="http://ddd" alt=""></p>
+<p><img src="https://github.com/IAn2018cs/IAn2018cs.github.io/blob/master/img/chuangjian1.png" alt=""></p>
 <p>然后出现下面这个界面</p>
-<p><img src="http://sdsd" alt=""></p>
+<p><img src="https://github.com/IAn2018cs/IAn2018cs.github.io/blob/master/img/chuanjian2.png" alt=""></p>
 <p>仓库名格式必须是 <code>xxx.github.io</code> ，这就是将来你访问你博客的域名，其中的xxx自己随便起。</p>
 <p>其他保持默认即可，然后点击创建，完成此步骤。</p>
 <h2 id="用Hexo初始化博客"><a href="#用Hexo初始化博客" class="headerlink" title="用Hexo初始化博客"></a>用Hexo初始化博客</h2><p>还是找到Git的安装目录，在这个目录下找到 <code>Git Bash.vbs</code> 文件，打开</p>
@@ -49,7 +49,7 @@ deploy:
     repo: https://github.com/你github的用户名/xxx.github.io.git    // 刚创建的Github仓库(可以到github上复制刚创建仓库的链接)
 </code></pre><p><a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">查看Hexo更多详细配置信息</a></p>
 <h2 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h2><p>其实Hexo提供好的高逼格的主题，可以自己在<a href="https://hexo.io/themes/" target="_blank" rel="external">这里</a>挑选一个喜欢的</p>
-<p><img src="http://sds" alt=""></p>
+<p><img src="https://github.com/IAn2018cs/IAn2018cs.github.io/blob/master/img/zhuti1.png" alt=""></p>
 <p>下载完后解压，把文件夹名字改成你下载主题的名字 ( 全是小写字母 ) 例：again，然后复制到刚创建的文件夹 <code>xxx.github.io/themes</code> 目录下</p>
 <p>首先到 <code>xxx.github.io</code> 文件夹下的 <code>_config.yml</code> 文件，现在可以设置上一步基础配置里的主题了</p>
 <p>找到 theme 节点修改</p>
@@ -65,9 +65,23 @@ deploy:
 
 hexo s
 </code></pre><p>等待一会，出现以下内容</p>
-<p><img src="http://sds" alt=""></p>
+<p><img src="https://github.com/IAn2018cs/IAn2018cs.github.io/blob/master/img/ceshi.png" alt=""></p>
 <p>就可以在浏览器中输入 <code>https://localhost:4000</code> 访问了 ( 其中 localhost 可以替换成本机 IP )。</p>
-]]></content>
+<h2 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h2><p>打开 Git 安装目录下的 <code>Git Bash.vbs</code> 文件，输入</p>
+<pre><code>cd xxx.github.io
+
+hexo g &amp;&amp; hexo d
+</code></pre><p>等待一会，就会出现一堆东西</p>
+<p><img src="https://github.com/IAn2018cs/IAn2018cs.github.io/blob/master/img/shangchuan1.png" alt=""></p>
+<p>然后会让你输入 github 的 用户名 和 密码</p>
+<p><img src="https://github.com/IAn2018cs/IAn2018cs.github.io/blob/master/img/shangchuan2.png" alt=""></p>
+<p>最后等待完成就可以了</p>
+<p><img src="https://github.com/IAn2018cs/IAn2018cs.github.io/blob/master/img/shangchuan3.png" alt=""></p>
+<h2 id="去欣赏一下自己搭建的博客"><a href="#去欣赏一下自己搭建的博客" class="headerlink" title="去欣赏一下自己搭建的博客"></a>去欣赏一下自己搭建的博客</h2><p>打开浏览器，输入 <code>xxx.github.io</code> ,就可以访问到自己的博客啦</p>
+<p><img src="https://github.com/IAn2018cs/IAn2018cs.github.io/blob/master/img/wancheng.png" alt=""></p>
+<h2 id="结言"><a href="#结言" class="headerlink" title="结言"></a>结言</h2><p>这是我结合群友发的两篇教程和自己的一点探索完成的，在内容和格式上参考了一些两位前辈的 <a href="http://opiece.me/" target="_blank" rel="external">Chillax</a>  和 <a href="http://www.jianshu.com/users/965ae4feb718/latest_articles" target="_blank" rel="external">简书作者：dimsky</a></p>
+<hr>
+<h4 id="花了两个多小时，终于完成了这篇文章。。。"><a href="#花了两个多小时，终于完成了这篇文章。。。" class="headerlink" title="花了两个多小时，终于完成了这篇文章。。。"></a>花了两个多小时，终于完成了这篇文章。。。</h4>]]></content>
     </entry>
     
     <entry>
