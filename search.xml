@@ -6,7 +6,7 @@
     <entry>
       <title><![CDATA[探索：使用Hexo搭建博客(Windows用户)]]></title>
       <url>http://yoursite.com/2016/09/01/%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/</url>
-      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我是在一个安卓开发群里了解到这种搭建博客的方法，群友发了两个链接，链接上的教程说是五分钟搭建自己的博客，可经过了一个多小时的探索才完成了这个博客。自己又搜索些资料，改了改主题，才最终弄成现在这个样子。</p>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我是在一个安卓开发群里了解到这种搭建博客的方法，群友发了两个链接，链接上的教程说是五分钟搭建自己的博客，可我经过了一个多小时的探索才完成了这个博客。自己又搜索些资料，改了改主题，才最终弄成现在这个样子。</p>
 <p>先贴出群友发的两个链接：</p>
 <blockquote>
 <p><a href="http://www.jianshu.com/p/4eaddcbe4d12" title="五分钟搭建博客的链接" target="_blank" rel="external">http://www.jianshu.com/p/4eaddcbe4d12</a></p>
@@ -49,7 +49,7 @@ deploy:
     type: git    //使用Git 发布
     repo: https://github.com/你github的用户名/xxx.github.io.git    // 刚创建的Github仓库(可以到github上复制刚创建仓库的链接)
 </code></pre><p><a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">查看Hexo更多详细配置信息</a></p>
-<h3 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h3><p>其实Hexo提供好的高逼格的主题，可以自己在<a href="https://hexo.io/themes/" target="_blank" rel="external">这里</a>挑选一个喜欢的</p>
+<h3 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h3><p>其实Hexo提供了好多高逼格的主题，自己可以在<a href="https://hexo.io/themes/" target="_blank" rel="external">这里</a>挑选一个喜欢的</p>
 <p><img src="/img/png/bo2img/zhuti1.png" alt=""></p>
 <p>下载完后解压，把文件夹名字改成你下载主题的名字 ( 全是小写字母 ) 例：again，然后复制到刚创建的文件夹 <code>xxx.github.io/themes</code> 目录下</p>
 <p>首先到 <code>xxx.github.io</code> 文件夹下的 <code>_config.yml</code> 文件，现在可以设置上一步基础配置里的主题了</p>
