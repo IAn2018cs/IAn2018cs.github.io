@@ -22,7 +22,7 @@
 </li>
 <li><p>安装hexo</p>
 <p>  这里就需要Git的安装目录了，在这个目录下找到一个叫Git Bash.vbs的文件，打开如下</p>
-<p>  <img src="https://github.com/IAn2018cs/IAn2018cs.github.io/blob/master/img/git.png" alt=""></p>
+<p>  <img src="/img/png/bo2img/git.jpg" alt=""></p>
 <p>  然后输入 <code>npm install hexo-cli -g</code> 按回车执行，完成</p>
 </li>
 </ul>
@@ -60,7 +60,7 @@ deploy:
 <h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><p>所有基础框架都已经创建完成，接下来可以开始写你的第一篇文章了</p>
 <p>在 <code>xxx.github.io/source/_posts</code> 文件夹下</p>
 <p>新建一个名为 <code>xxx.md</code> 的文件，用 <a href="http://pan.baidu.com/s/1eRTLOe2" target="_blank" rel="external">Markdown</a> 书写你的大作吧。</p>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>继续打开 Git 安装目录下的 <code>Git Bash.vbs</code> 文件，输入</p>
+<h2 id="测试和发布"><a href="#测试和发布" class="headerlink" title="测试和发布"></a>测试和发布</h2><h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>继续打开 Git 安装目录下的 <code>Git Bash.vbs</code> 文件，输入</p>
 <pre><code>cd xxx.github.io 
 
 hexo s
