@@ -7,6 +7,13 @@
       <title><![CDATA[探索：使用Hexo搭建博客(Windows用户)]]></title>
       <url>http://ian2018.cn/2016/09/01/%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我是在一个安卓开发群里了解到这种搭建博客的方法，群友发了两个链接，链接上的教程说是五分钟搭建自己的博客，可我经过了一个多小时的探索才完成了这个博客。自己又搜索些资料，改了改主题，才最终弄成现在这个样子。</p>
+<excerpt in="" index="" |="" 首页摘要=""> 
+
+
+<p>+<a id="more"></a></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+
 <p>先贴出群友发的两个链接：</p>
 <blockquote>
 <p><a href="http://www.jianshu.com/p/4eaddcbe4d12" title="五分钟搭建博客的链接" target="_blank" rel="external">http://www.jianshu.com/p/4eaddcbe4d12</a></p>
@@ -84,7 +91,7 @@ hexo g &amp;&amp; hexo d
 <hr>
 <h1 id="结言"><a href="#结言" class="headerlink" title="结言"></a>结言</h1><p>这是我结合群友发的两篇教程和自己的一点探索完成的，在内容和格式上参考了一些两位前辈的 <a href="http://opiece.me/" target="_blank" rel="external">Chillax</a>  和 <a href="http://www.jianshu.com/users/965ae4feb718/latest_articles" target="_blank" rel="external">简书作者：dimsky</a></p>
 <hr>
-<h4 id="花了两个多小时，终于完成了这篇文章……"><a href="#花了两个多小时，终于完成了这篇文章……" class="headerlink" title="花了两个多小时，终于完成了这篇文章……"></a>花了两个多小时，终于完成了这篇文章……</h4>]]></content>
+<h4 id="花了两个多小时，终于完成了这篇文章……"><a href="#花了两个多小时，终于完成了这篇文章……" class="headerlink" title="花了两个多小时，终于完成了这篇文章……"></a>花了两个多小时，终于完成了这篇文章……</h4></the></excerpt>]]></content>
     </entry>
     
     <entry>
