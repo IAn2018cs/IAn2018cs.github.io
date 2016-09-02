@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[探索：使用Hexo搭建博客(Windows用户)]]></title>
-      <url>http://yoursite.com/2016/09/01/%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/</url>
+      <url>http://ian2018.cn/2016/09/01/%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我是在一个安卓开发群里了解到这种搭建博客的方法，群友发了两个链接，链接上的教程说是五分钟搭建自己的博客，可我经过了一个多小时的探索才完成了这个博客。自己又搜索些资料，改了改主题，才最终弄成现在这个样子。</p>
 <p>先贴出群友发的两个链接：</p>
 <blockquote>
@@ -89,7 +89,7 @@ hexo g &amp;&amp; hexo d
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>http://yoursite.com/2016/08/31/hello-world/</url>
+      <url>http://ian2018.cn/2016/08/31/hello-world/</url>
       <content type="html"><![CDATA[<p>第一次搭建自己的博客</p>
 <h1 id="有点激动啊"><a href="#有点激动啊" class="headerlink" title="有点激动啊"></a>有点激动啊</h1>]]></content>
     </entry>
