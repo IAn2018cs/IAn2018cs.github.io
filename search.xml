@@ -34,7 +34,7 @@
 <p><img src="/img/png/bo2img/chuangjian1.png" alt=""></p>
 <p>然后出现下面这个界面</p>
 <p><img src="/img/png/bo2img/chuanjian2.png" alt=""></p>
-<p>仓库名格式必须是 <code>xxx.github.io</code> ，这就是将来你访问你博客的域名，其中的xxx自己随便起。</p>
+<p>仓库名格式必须是 <code>xxx.github.io</code> ，这就是将来你访问你博客的域名，其中的xxx是自己github的用户名。</p>
 <p>其他保持默认即可，然后点击创建，完成此步骤。</p>
 <h3 id="用Hexo初始化博客"><a href="#用Hexo初始化博客" class="headerlink" title="用Hexo初始化博客"></a>用Hexo初始化博客</h3><p>还是找到Git的安装目录，在这个目录下找到 <code>Git Bash.vbs</code> 文件，打开</p>
 <p>输入<code>hexo init xxx.github.io</code></p>
