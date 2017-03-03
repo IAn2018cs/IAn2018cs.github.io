@@ -4,19 +4,19 @@
   
     
     <entry>
-      <title><![CDATA[自学之路：初识HTTP]]></title>
+      <title><![CDATA[自学之路：初识HTTP——《图解HTTP》note1]]></title>
       <url>http://ian2018.cn/2017/03/01/%E8%87%AA%E5%AD%A6%E4%B9%8B%E8%B7%AF%EF%BC%9A%E5%88%9D%E8%AF%86HTTP/</url>
-      <content type="html"><![CDATA[<h1 id="《图解HTTP》note1"><a href="#《图解HTTP》note1" class="headerlink" title="《图解HTTP》note1"></a>《图解HTTP》note1</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近打算学习一些网络相关的知识，经别人推荐，说《图解HTTP》这本书不错，于是便买来打算学习一波。笔记之中有什么错误，还望指出^_^。</p>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近打算学习一些网络相关的知识，经别人推荐，说《图解HTTP》这本书不错，于是便买来打算学习一波。笔记之中有什么错误，还望指出^_^。</p>
 <p>一般的网络协议相关的书籍，仅仅是其厚度就令人望而生畏；但这本书仅仅有二百五十多页，让人不那么抵触，而且内容图文并茂，也不是那么枯燥，让人有种想看下去的欲望。</p>
 <p>好了，废话不多说了，在学习HTTP之前，先了解了一下HTTP的发展历史和一些网络基础。</p>
 <p><excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-<h2 id="HTTP，一个发育缓慢的孩子"><a href="#HTTP，一个发育缓慢的孩子" class="headerlink" title="HTTP，一个发育缓慢的孩子"></a>HTTP，一个发育缓慢的孩子</h2><h3 id="什么是-HTTP-？"><a href="#什么是-HTTP-？" class="headerlink" title="什么是 HTTP ？"></a>什么是 HTTP ？</h3><p>我们使用HTTP最多的时候，就是我们在浏览网页的时候。</p>
+<h1 id="HTTP，一个发育缓慢的孩子"><a href="#HTTP，一个发育缓慢的孩子" class="headerlink" title="HTTP，一个发育缓慢的孩子"></a>HTTP，一个发育缓慢的孩子</h1><h2 id="什么是-HTTP-？"><a href="#什么是-HTTP-？" class="headerlink" title="什么是 HTTP ？"></a>什么是 HTTP ？</h2><p>我们使用HTTP最多的时候，就是我们在浏览网页的时候。</p>
 <p>当你在浏览器的地址栏中输入网址后，一回车就会呈现出你要搜寻的页面，那么这个过程是如何实现的呢？</p>
 <p>其实是我们的浏览器会根据你输入的网址，去对应的服务器端获取到相应的资源，然后在将它显示出来。那么在这个过程中，肯定要遵守一个规则，这个规则就是HTTP协议。</p>
 <p>HTTP（HyperText Transfer Protocol）,中文名字叫“超文本传输协议”。HTTP诞生于1990年，由CERN（欧洲核子研究组织）提出，目的是为解决文档传输难题，让远隔两地的研究者实现知识共享。</p>
-<h3 id="Web技术飞速发展"><a href="#Web技术飞速发展" class="headerlink" title="Web技术飞速发展"></a>Web技术飞速发展</h3><p>1990年11月，CERN 研发出第一台Web服务器和Web浏览器；</p>
+<h2 id="Web技术飞速发展"><a href="#Web技术飞速发展" class="headerlink" title="Web技术飞速发展"></a>Web技术飞速发展</h2><p>1990年11月，CERN 研发出第一台Web服务器和Web浏览器；</p>
 <p>1993年，HTML1.0在全世界范围流行；</p>
 <p>1994年，网景通信公司发布了浏览器 Netscape Navigator 1.0；</p>
 <p>1995年，微软公司发布了浏览器 Internet Explorer 1.0 和 2.0，浏览器大战一触即发；</p>
@@ -24,31 +24,31 @@
 <p>随着浏览器大战愈演愈烈，浏览器公司不顾Web标准化，屡次新增功能却没有对应的说明文档，而且还对各自的HTML进行了扩展，导致前端工程师开发时，必须考虑兼容他们公司的浏览器。</p>
 <p>2000年左右，随着网景通信公司的衰落，浏览器大战也告一段落。但在2004年，Mozilla基金会发布了 Firefox（火狐）浏览器，浏览器大战再次爆发。</p>
 <p>Chrome、Opera、Safari 等浏览器也纷纷抢占市场。</p>
-<h3 id="驻足不前的HTTP"><a href="#驻足不前的HTTP" class="headerlink" title="驻足不前的HTTP"></a>驻足不前的HTTP</h3><p>1990年 HTTP 问世，但那时没有作为正式的标准，所以称之为 HTTP/0.9;</p>
+<h2 id="驻足不前的HTTP"><a href="#驻足不前的HTTP" class="headerlink" title="驻足不前的HTTP"></a>驻足不前的HTTP</h2><p>1990年 HTTP 问世，但那时没有作为正式的标准，所以称之为 HTTP/0.9;</p>
 <p>1996年5月，HTTP 正式作为标准版公布，命名为 HTTP/1.0，该协议至今仍在广泛使用在服务端。</p>
 <p>1997年1月发布 HTTP/1.1，这是目前主流的HTTP协议版本。</p>
 <p>现在 HTTP/2.0 正在制定中，但要达到较高的使用覆盖率，恐怕还需要一段时间。</p>
-<h2 id="网络基础-TCP-IP-协议族"><a href="#网络基础-TCP-IP-协议族" class="headerlink" title="网络基础 TCP/IP 协议族"></a>网络基础 TCP/IP 协议族</h2><p>现在通常使用的网络都是在 TCP/IP 协议族的基础上运作的，HTTP协议就属于它内部的一个子集。</p>
+<h1 id="网络基础-TCP-IP-协议族"><a href="#网络基础-TCP-IP-协议族" class="headerlink" title="网络基础 TCP/IP 协议族"></a>网络基础 TCP/IP 协议族</h1><p>现在通常使用的网络都是在 TCP/IP 协议族的基础上运作的，HTTP协议就属于它内部的一个子集。</p>
 <p>计算机要和网络设备实现通信，双方就必须基于同样的方法，遵守各种协议，这样把互联网相关的协议集合起来，总称为 TCP/IP。</p>
-<h3 id="TCP-IP-的分层管理"><a href="#TCP-IP-的分层管理" class="headerlink" title="TCP/IP 的分层管理"></a>TCP/IP 的分层管理</h3><p>为了能方便的修改和扩展，TCP/IP 采用分层的设计方式，这样当某个地方需要修改时，不需要更改整个协议，只需要修改相应的层即可。</p>
+<h2 id="TCP-IP-的分层管理"><a href="#TCP-IP-的分层管理" class="headerlink" title="TCP/IP 的分层管理"></a>TCP/IP 的分层管理</h2><p>为了能方便的修改和扩展，TCP/IP 采用分层的设计方式，这样当某个地方需要修改时，不需要更改整个协议，只需要修改相应的层即可。</p>
 <p>TCP/IP 协议族分为四层：应用层，传输层，网络层，链路层。</p>
-<h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><p>应用层决定了向用户提供服务时通信的活动，比如HTTP，FTP（文件传输协议），DNS（域名系统）等。</p>
-<h4 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h4><p>传输层对上层应用层，提供处于网络连接中的两台计算机之间的数据传输。在这层有两个性质不同的协议：TCP（传输控制协议），UDP（用户数据报协议）。</p>
-<h4 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h4><p>又名网络互连层。该层用来处理网络上流动的数据包，规定通过怎样的路径把数据包传递给对方。IP协议等位于这一层。</p>
-<h4 id="链路层"><a href="#链路层" class="headerlink" title="链路层"></a>链路层</h4><p>又名数据链路层，网络接口层。用于处理连接网络的硬件部分。</p>
-<h3 id="TCP-IP-通信传输流"><a href="#TCP-IP-通信传输流" class="headerlink" title="TCP/IP 通信传输流"></a>TCP/IP 通信传输流</h3><p><img src="/img/png/bo4img/HTTP-TCP-IP-Stream-01.png" alt="图1"></p>
+<h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><p>应用层决定了向用户提供服务时通信的活动，比如HTTP，FTP（文件传输协议），DNS（域名系统）等。</p>
+<h3 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h3><p>传输层对上层应用层，提供处于网络连接中的两台计算机之间的数据传输。在这层有两个性质不同的协议：TCP（传输控制协议），UDP（用户数据报协议）。</p>
+<h3 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h3><p>又名网络互连层。该层用来处理网络上流动的数据包，规定通过怎样的路径把数据包传递给对方。IP协议等位于这一层。</p>
+<h3 id="链路层"><a href="#链路层" class="headerlink" title="链路层"></a>链路层</h3><p>又名数据链路层，网络接口层。用于处理连接网络的硬件部分。</p>
+<h2 id="TCP-IP-通信传输流"><a href="#TCP-IP-通信传输流" class="headerlink" title="TCP/IP 通信传输流"></a>TCP/IP 通信传输流</h2><p><img src="/img/png/bo4img/HTTP-TCP-IP-Stream-01.png" alt="图1"></p>
 <p>如图1所示，利用 TCP/IP 进行网络通信时，发送端从应用层往下走，而接收端从链路层往上走。</p>
 <p><img src="/img/png/bo4img/HTTP-TCP-IP-Stream-02.png" alt="图2"></p>
 <p>如图2所示，发送端在传递数据时，每经过一层，就会被打上一个包含该层所属的首部信息；接收端在传递数据时，每经过一层，就会把对应的首部信息去掉。</p>
-<h2 id="与-HTTP-密切相关的三个协议"><a href="#与-HTTP-密切相关的三个协议" class="headerlink" title="与 HTTP 密切相关的三个协议"></a>与 HTTP 密切相关的三个协议</h2><p>在 TCP/IP 协议族中，有三个和 HTTP 密不可分的协议，它们分别是 DNS服务、TCP协议 和 IP协议。</p>
-<h3 id="负责域名解析的-DNS服务"><a href="#负责域名解析的-DNS服务" class="headerlink" title="负责域名解析的 DNS服务"></a>负责域名解析的 DNS服务</h3><p>DNS服务 和 HTTP协议 都位于应用层。DNS服务提供域名到IP地址的解析服务。</p>
+<h1 id="与-HTTP-密切相关的三个协议"><a href="#与-HTTP-密切相关的三个协议" class="headerlink" title="与 HTTP 密切相关的三个协议"></a>与 HTTP 密切相关的三个协议</h1><p>在 TCP/IP 协议族中，有三个和 HTTP 密不可分的协议，它们分别是 DNS服务、TCP协议 和 IP协议。</p>
+<h2 id="负责域名解析的-DNS服务"><a href="#负责域名解析的-DNS服务" class="headerlink" title="负责域名解析的 DNS服务"></a>负责域名解析的 DNS服务</h2><p>DNS服务 和 HTTP协议 都位于应用层。DNS服务提供域名到IP地址的解析服务。</p>
 <p>什么是域名？比如 www.baidu.com 就是域名。</p>
 <p>什么是IP地址？比如 119.75.218.70。</p>
 <p>域名和IP地址都是用来标记计算机的，有了它就可以找到网络上相应的计算机，举个不恰当的例子，好比你的名字就是域名，你的身份证号就是IP地址，当有人想找你的时候，即可以通过你的名字来找你，也可以通过你的身份证号来找你。</p>
 <p>那么为什么会有两个东西来标记计算机呢？ 因为一个是给人看的，一个是为计算机看的。与IP地址的一组纯数字对比，用字母配合数字的表示形式更符合人类的记忆习惯；但计算机就不擅长处理字母了，它更擅长处理数字。</p>
 <p>为了方便人们记忆，DNS服务应运而生，它提供通过域名查找IP地址，或逆向从IP地址反查域名的服务。</p>
 <p><img src="/img/png/bo4img/DNS1.png" alt="图3"></p>
-<h3 id="确保可靠性的-TCP协议"><a href="#确保可靠性的-TCP协议" class="headerlink" title="确保可靠性的 TCP协议"></a>确保可靠性的 TCP协议</h3><p>TCP协议位于传输层，提供可靠的字节流服务。</p>
+<h2 id="确保可靠性的-TCP协议"><a href="#确保可靠性的-TCP协议" class="headerlink" title="确保可靠性的 TCP协议"></a>确保可靠性的 TCP协议</h2><p>TCP协议位于传输层，提供可靠的字节流服务。</p>
 <p>字节流服务是指，为了方便传输，将 大块数据 分割成以 报文段 为单位的 数据包 进行管理。</p>
 <p>为了能够确保数据到达目标，TCP协议采用了 三次握手策略。</p>
 <p><img src="/img/png/bo4img/TCP1.png" alt="图4"></p>
@@ -63,27 +63,27 @@
 <p>三：甲终于等到了乙的回信，既然同意一起攻打丙了，那么咱们就定个日子，什么时候去打丙吧，于是甲又给乙写了封信。</p>
 <p>乙收到了甲的信，日子都定下了，咱们就一起干吧。于是甲和乙这次敢出兵攻打丙。</p>
 <p>如果有一方没有收到回信，肯定会再从头来一遍。</p>
-<h3 id="负责传输的-IP协议"><a href="#负责传输的-IP协议" class="headerlink" title="负责传输的 IP协议"></a>负责传输的 IP协议</h3><p>IP协议位于网络层，它的作用是把各种数据包传递给对方。为了能传递到对方，就必须满足各类条件，其中最重要的两个是 IP地址 和 MAC地址。</p>
+<h2 id="负责传输的-IP协议"><a href="#负责传输的-IP协议" class="headerlink" title="负责传输的 IP协议"></a>负责传输的 IP协议</h2><p>IP协议位于网络层，它的作用是把各种数据包传递给对方。为了能传递到对方，就必须满足各类条件，其中最重要的两个是 IP地址 和 MAC地址。</p>
 <p>IP地址指明了节点被分配到的地址，MAC地址指网卡所属的固定地址。IP地址可以变换，但MAC地址基本上不会改变。</p>
 <p>一般发送数据包不会直接发送的对方那里，而是经过多台计算机和网络设备中转，才能发送带对方那里。在中转时，会利用下一站中转设备的 MAC地址 来搜寻下一个中转目标。这里会采用 ARP协议，一种以解析地址的协议，可以根据通信方的IP地址就可以反查出对应的MAC地址。</p>
 <p>利用 IP协议 传输数据包，就好比是快递公司送货一样，一般都会从一个转运中心到另一个转运中心，直到可以送到你手中为止。</p>
 <p><img src="/img/png/bo4img/IP1.png" alt="图5"></p>
-<h3 id="利用HTTP协议、IP协议、TCP协议和DNS服务来请求一个网页的过程图解"><a href="#利用HTTP协议、IP协议、TCP协议和DNS服务来请求一个网页的过程图解" class="headerlink" title="利用HTTP协议、IP协议、TCP协议和DNS服务来请求一个网页的过程图解"></a>利用HTTP协议、IP协议、TCP协议和DNS服务来请求一个网页的过程图解</h3><p>通过下面这个图来了解一下在通信过程中，这些协议都发挥了哪些作用。</p>
+<h2 id="利用HTTP协议、IP协议、TCP协议和DNS服务来请求一个网页的过程图解"><a href="#利用HTTP协议、IP协议、TCP协议和DNS服务来请求一个网页的过程图解" class="headerlink" title="利用HTTP协议、IP协议、TCP协议和DNS服务来请求一个网页的过程图解"></a>利用HTTP协议、IP协议、TCP协议和DNS服务来请求一个网页的过程图解</h2><p>通过下面这个图来了解一下在通信过程中，这些协议都发挥了哪些作用。</p>
 <p><img src="/img/png/bo4img/HTTP-TCP-IP-Stream-03.png" alt="图6"></p>
-<h2 id="URI-和-URL"><a href="#URI-和-URL" class="headerlink" title="URI 和 URL"></a>URI 和 URL</h2><h3 id="URI-和-URL-简介"><a href="#URI-和-URL-简介" class="headerlink" title="URI 和 URL 简介"></a>URI 和 URL 简介</h3><p>URI（Uniform Resource Identifier，统一资源标识符），用字符串标识某一互联网资源。</p>
+<h1 id="URI-和-URL"><a href="#URI-和-URL" class="headerlink" title="URI 和 URL"></a>URI 和 URL</h1><h2 id="URI-和-URL-简介"><a href="#URI-和-URL-简介" class="headerlink" title="URI 和 URL 简介"></a>URI 和 URL 简介</h2><p>URI（Uniform Resource Identifier，统一资源标识符），用字符串标识某一互联网资源。</p>
 <p>URL（Uniform Resource Locator，统一资源定位符），表示互联网上资源所处的位置。</p>
 <p>可见，URL 是 URI 的子集。</p>
 <p><img src="/img/png/bo4img/URI1.png" alt="图7"></p>
 <p>如图7所示，列举了几种 URI 例子</p>
-<h3 id="URI-格式"><a href="#URI-格式" class="headerlink" title="URI 格式"></a>URI 格式</h3><p><img src="/img/png/bo4img/URI2.png" alt="图8"></p>
-<h4 id="协议名称"><a href="#协议名称" class="headerlink" title="协议名称"></a>协议名称</h4><p>指访问资源时使用哪种协议类型。</p>
-<h4 id="登录信息认证"><a href="#登录信息认证" class="headerlink" title="登录信息认证"></a>登录信息认证</h4><p>此为可选项，指定用户名和密码作为从服务器获取资源的必要登录信息。</p>
-<h4 id="服务器地址"><a href="#服务器地址" class="headerlink" title="服务器地址"></a>服务器地址</h4><p>必须指定，地址可以是域名，也可以是IP地址。</p>
-<h4 id="服务器端口号"><a href="#服务器端口号" class="headerlink" title="服务器端口号"></a>服务器端口号</h4><p>可选项，指定服务器网络连接的端口号，不指定使用默认的端口号。</p>
-<h4 id="带层次的文件路径"><a href="#带层次的文件路径" class="headerlink" title="带层次的文件路径"></a>带层次的文件路径</h4><p>指定服务器上资源的文件路径位置。</p>
-<h4 id="查询字符串"><a href="#查询字符串" class="headerlink" title="查询字符串"></a>查询字符串</h4><p>可选项，针对已指定的文件路径内的资源，可以使用查询字符串传入任意参数。</p>
-<h4 id="片段标识符"><a href="#片段标识符" class="headerlink" title="片段标识符"></a>片段标识符</h4><p>可选项，可以标记出已获取资源中的子资源。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>好了，今天大概了解了一下 HTTP 的历史，以及一些网络基础。如果有什么不正确的地方，还请多多指教。</p>
+<h2 id="URI-格式"><a href="#URI-格式" class="headerlink" title="URI 格式"></a>URI 格式</h2><p><img src="/img/png/bo4img/URI2.png" alt="图8"></p>
+<h3 id="协议名称"><a href="#协议名称" class="headerlink" title="协议名称"></a>协议名称</h3><p>指访问资源时使用哪种协议类型。</p>
+<h3 id="登录信息认证"><a href="#登录信息认证" class="headerlink" title="登录信息认证"></a>登录信息认证</h3><p>此为可选项，指定用户名和密码作为从服务器获取资源的必要登录信息。</p>
+<h3 id="服务器地址"><a href="#服务器地址" class="headerlink" title="服务器地址"></a>服务器地址</h3><p>必须指定，地址可以是域名，也可以是IP地址。</p>
+<h3 id="服务器端口号"><a href="#服务器端口号" class="headerlink" title="服务器端口号"></a>服务器端口号</h3><p>可选项，指定服务器网络连接的端口号，不指定使用默认的端口号。</p>
+<h3 id="带层次的文件路径"><a href="#带层次的文件路径" class="headerlink" title="带层次的文件路径"></a>带层次的文件路径</h3><p>指定服务器上资源的文件路径位置。</p>
+<h3 id="查询字符串"><a href="#查询字符串" class="headerlink" title="查询字符串"></a>查询字符串</h3><p>可选项，针对已指定的文件路径内的资源，可以使用查询字符串传入任意参数。</p>
+<h3 id="片段标识符"><a href="#片段标识符" class="headerlink" title="片段标识符"></a>片段标识符</h3><p>可选项，可以标记出已获取资源中的子资源。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>好了，今天大概了解了一下 HTTP 的历史，以及一些网络基础。如果有什么不正确的地方，还请多多指教。</p>
 <p>今天就先到这里吧。以后什么时候再见还不一定，因为有时候懒癌发作了很难好过来<img src="/img/png/bo4img/images.png" alt=""></p>
 </the>]]></content>
     </entry>
