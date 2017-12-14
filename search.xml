@@ -4,6 +4,110 @@
   
     
     <entry>
+      <title><![CDATA[探索：搭建GitLab服务器(CentOS7.2)]]></title>
+      <url>http://ian2018.cn/2017/12/14/%E6%90%AD%E5%BB%BAGitLab/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>GitLab 是一个用于仓库管理系统的开源项目，使用Git作为代码管理工具，并在此基础上搭建起来的web服务。<br>可通过网页进行访问公开的或者私人项目。它拥有与Github类似的功能，能够浏览源代码，管理缺陷和注释。不过GitLab可以免费创建自己的私密仓库，而Github创建私密仓库需要每个月支付7$。GitLab需要自己在服务器上搭建，所以拥有对用户的控制权，可以管理团队对仓库的访问，方便管理，适用于公司内部使用。现在就让我们来试试如何搭建自己的GitLab服务器。</p>
+<p><excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<p>先贴出参考学习链接：</p>
+<blockquote>
+<p><a href="https://www.douban.com/note/640641236/" title="gitlab安装与使用10.0.3" target="_blank" rel="external">https://www.douban.com/note/640641236/</a></p>
+</blockquote>
+<hr>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="搭建前的准备"><a href="#搭建前的准备" class="headerlink" title="搭建前的准备"></a>搭建前的准备</h2><ul>
+<li><p>首先你要有一个操作系统为CentOS7.2的电脑或服务器，可以自己创建虚拟机或买个云服务器，这里就不教具体步骤了。</p>
+</li>
+<li><p>然后你需要一篇教程，比如这个^_^!</p>
+</li>
+<li><p>最后能看懂文字，并照着敲下来</p>
+</li>
+</ul>
+<hr>
+<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><p>这里我使用的是阿里云服务器，1核2G内存。。。</p>
+<h3 id="1-打开HTTP和SSH访问"><a href="#1-打开HTTP和SSH访问" class="headerlink" title="1. 打开HTTP和SSH访问"></a>1. 打开HTTP和SSH访问</h3><p>进入系统后，输入以下命令，一条一条的运行，如果服务器配置垃圾的话，会比较慢，等会他就行，别着急，以为它坏了</p>
+<h4 id="1-1-安装一些东西"><a href="#1-1-安装一些东西" class="headerlink" title="1.1 安装一些东西"></a>1.1 安装一些东西</h4><p>屏幕上会输出一堆东西，最后出现 Complete! 就代表成功了</p>
+<pre><code>sudo yum install -y curl policycoreutils-python openssh-server
+</code></pre><p><img src="/img/png/bo5img/3.png" alt=""></p>
+<h4 id="1-2-开启SSH"><a href="#1-2-开启SSH" class="headerlink" title="1.2 开启SSH"></a>1.2 开启SSH</h4><p>这两条指令不会有什么东西输出，不要担心</p>
+<pre><code>sudo systemctl enable sshd
+
+sudo systemctl start sshd
+</code></pre><h4 id="1-3-开启HTTP"><a href="#1-3-开启HTTP" class="headerlink" title="1.3 开启HTTP"></a>1.3 开启HTTP</h4><pre><code>sudo firewall-cmd --permanent --add-service=http
+
+sudo systemctl reload firewalld
+</code></pre><p>如果运行第一条指令后出现 FirewallD is not running ，说明防火墙没有打开，运行一下</p>
+<pre><code>systemctl start firewalld
+</code></pre><p>来打开防火墙，之后再运行第一条指令，就会出现 success </p>
+<h3 id="2-安装GitLab"><a href="#2-安装GitLab" class="headerlink" title="2. 安装GitLab"></a>2. 安装GitLab</h3><p>有的教程还会安装postfix来发送通知邮件，不过这得需要你有服务器的外部DNS名称，我试了3次都没设置成功，所有建议你别安装了，等后面再配置外部SMTP服务器，这个操作成功率比较高。</p>
+<h4 id="2-1-添加GitLab包库"><a href="#2-1-添加GitLab包库" class="headerlink" title="2.1 添加GitLab包库"></a>2.1 添加GitLab包库</h4><p>这里屏幕上也会输出一堆东西，最后看到 The repository is setup! You can now install packages. 就说明成功了</p>
+<pre><code>curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash
+</code></pre><p><img src="/img/png/bo5img/5.png" alt=""></p>
+<h4 id="2-2-安装GitLab"><a href="#2-2-安装GitLab" class="headerlink" title="2.2 安装GitLab"></a>2.2 安装GitLab</h4><p>这里也会输出一堆东西，你会看到有下载进度，和安装进度，最后安装完成后屏幕上会输出 GitLab 的 logo</p>
+<pre><code>sudo yum install -y gitlab-ee
+</code></pre><p><img src="/img/png/bo5img/7.png" alt=""></p>
+<h3 id="3-配置并启动GitLab"><a href="#3-配置并启动GitLab" class="headerlink" title="3. 配置并启动GitLab"></a>3. 配置并启动GitLab</h3><p>如果服务器配置垃圾的话，这里会花费大量时间，可能会等半个小时左右吧，所以耐心等待，不要以为它坏了。最后输出 gitlab Reconfigured! 就代表成功了。</p>
+<pre><code>sudo gitlab-ctl reconfigure
+</code></pre><p><img src="/img/png/bo5img/10.png" alt=""></p>
+<h3 id="4-可以使用啦"><a href="#4-可以使用啦" class="headerlink" title="4. 可以使用啦"></a>4. 可以使用啦</h3><p>打开一个浏览器，输入你安装GitLab的服务器IP地址，就会打开一个网页。</p>
+<p>第一次进入会让你设置密码</p>
+<p><img src="/img/png/bo5img/11.png" alt=""></p>
+<p>设置完后会跳到登录界面</p>
+<p><img src="/img/png/bo5img/12.png" alt=""></p>
+<p>最后，终于进入 GitLab 了</p>
+<p><img src="/img/png/bo5img/14.png" alt=""></p>
+<h3 id="5-修改GitLab里的项目展示地址"><a href="#5-修改GitLab里的项目展示地址" class="headerlink" title="5. 修改GitLab里的项目展示地址"></a>5. 修改GitLab里的项目展示地址</h3><p>使用编辑器打开 gitlab.rb 文件，进行修改，输入以下命令</p>
+<p>附上 vim 的使用方法：<a href="https://www.cnblogs.com/emanlee/archive/2011/11/10/2243930.html" target="_blank" rel="external">https://www.cnblogs.com/emanlee/archive/2011/11/10/2243930.html</a></p>
+<pre><code>vim /etc/gitlab/gitlab.rb
+</code></pre><p>开始是不能进行编辑的，需要按 i ，屏幕左下角出现 INSERT ，然后就可以编辑了。</p>
+<p>找到 external_url ‘<a href="http://www.gitlab.com" target="_blank" rel="external">http://www.gitlab.com</a>‘ ，改成你的地址就行了，也可以填IP地址</p>
+<p><img src="/img/png/bo5img/23.png" alt=""></p>
+<p>保存退出，先按esc键，然后按 : ，最后输入 wq </p>
+<p>修改配置文件后，需要重启GitLab，输入以下命令，这里也会等很长时间</p>
+<pre><code>gitlab-ctl reconfigure
+
+gitlab-ctl restart
+</code></pre><hr>
+<h2 id="配置外部SMTP服务器，实现邮箱通知功能"><a href="#配置外部SMTP服务器，实现邮箱通知功能" class="headerlink" title="配置外部SMTP服务器，实现邮箱通知功能"></a>配置外部SMTP服务器，实现邮箱通知功能</h2><p>需要有第三方邮箱服务账号，这里我用的是腾讯企业邮箱。如果你已经有账号了，就可以跳过这里。</p>
+<h3 id="1-注册帐号"><a href="#1-注册帐号" class="headerlink" title="1. 注册帐号"></a>1. 注册帐号</h3><p>先按照步骤，注册帐号，链接： <a href="https://exmail.qq.com/cgi-bin/bizmail_portal?t=bizmail_trial_signup&amp;refer=index_top" target="_blank" rel="external">注册腾讯企业邮箱帐号</a></p>
+<p><img src="/img/png/bo5img/27.png" alt=""></p>
+<h3 id="2-添加域名"><a href="#2-添加域名" class="headerlink" title="2. 添加域名"></a>2. 添加域名</h3><p>注册完之后，会让你设置一个域名，如果没有跳转，可以到 我的企业 -&gt; 域名管理 -&gt; 添加域名，进行设置</p>
+<p>这里没有域名的，可以现买一个，有便宜的，不过你新买的域名需要实名认证，一般一天就完成认证了。</p>
+<p><img src="/img/png/bo5img/13.png" alt=""></p>
+<p>然后会让你设置邮箱解析，按照它的步骤来就可以</p>
+<p><img src="/img/png/bo5img/15.png" alt=""></p>
+<h3 id="3-添加成员用户"><a href="#3-添加成员用户" class="headerlink" title="3. 添加成员用户"></a>3. 添加成员用户</h3><p>进入 成员与群组 -&gt; 新增成员 -&gt; 新建成员 ，添加一个用户。</p>
+<p><img src="/img/png/bo5img/17.png" alt=""></p>
+<p><img src="/img/png/bo5img/16.png" alt=""></p>
+<h3 id="4-设置管理员邮箱"><a href="#4-设置管理员邮箱" class="headerlink" title="4. 设置管理员邮箱"></a>4. 设置管理员邮箱</h3><p>进入 我的企业 -&gt; 账号设置 ，找到管理员邮箱，进行添加，这里邮箱必须是成员邮箱</p>
+<p><img src="/img/png/bo5img/18.png" alt=""></p>
+<h3 id="5-获取客户端专用密码"><a href="#5-获取客户端专用密码" class="headerlink" title="5. 获取客户端专用密码"></a>5. 获取客户端专用密码</h3><p>先登录进管理员邮箱，就是上面添加的那个用户：<a href="https://exmail.qq.com/cgi-bin/loginpage" target="_blank" rel="external">登录管理员邮箱</a></p>
+<p>进去后找到设置，点击微信绑定，绑定后开启安全登录。</p>
+<p><img src="/img/png/bo5img/20.png" alt=""></p>
+<p>然后找到客户端专用密码，点击生成新密码按钮，记住得到的16位密码，一会要用到。</p>
+<p><img src="/img/png/bo5img/22.png" alt=""></p>
+<p><img src="/img/png/bo5img/21.png" alt=""></p>
+<h3 id="6-修改-GitLab-配置文件"><a href="#6-修改-GitLab-配置文件" class="headerlink" title="6. 修改 GitLab 配置文件"></a>6. 修改 GitLab 配置文件</h3><p>使用编辑器打开 gitlab.rb 文件，进行修改，输入以下命令</p>
+<pre><code>vim /etc/gitlab/gitlab.rb
+</code></pre><p>修改保存的方法一样，找到如下内容</p>
+<p><img src="/img/png/bo5img/24.png" alt=""></p>
+<p>将打码的部分替换成自己的邮箱帐号和刚刚得到的16位密码</p>
+<p><img src="/img/png/bo5img/25.png" alt=""></p>
+<p>最后保存退出，先按esc键，然后按 : ，最后输入 wq </p>
+<p>重启GitLab，输入以下命令，继续等很长时间</p>
+<pre><code>gitlab-ctl reconfigure
+
+gitlab-ctl restart
+</code></pre><p>好了，重启成功后，就能使用邮件通知功能了。</p>
+<hr>
+<h1 id="结言"><a href="#结言" class="headerlink" title="结言"></a>结言</h1><p>如果想正常使用，推荐服务器配置是2核4G的，否则你的 CUP 会卡爆，打开网页能把你急死，还会时不时给你来个 502 服务器异常。</p>
+<p><img src="/img/png/bo5img/28.png" alt=""></p>
+<p><img src="/img/png/bo5img/26.png" alt=""></p>
+<p>好了，关于 GitLab 的一些使用，下次再分享吧，但愿懒癌不会发作。<img src="/img/png/bo5img/images.png" alt=""></p>
+</the>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[自学之路：初识HTTP——《图解HTTP》note1]]></title>
       <url>http://ian2018.cn/2017/03/01/%E8%87%AA%E5%AD%A6%E4%B9%8B%E8%B7%AF%EF%BC%9A%E5%88%9D%E8%AF%86HTTP/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近打算学习一些网络相关的知识，经别人推荐，说《图解HTTP》这本书不错，于是便买来打算学习一波。笔记之中有什么错误，还望指出^_^。</p>
